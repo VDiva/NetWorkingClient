@@ -34,9 +34,7 @@ public class NetManager : SingletonClass<NetManager>
     
     public void SenMessage(object data)
     {
-       
-        _client.SetSendMessageBuffer(GameTool.Serialization(data));
-        _client.SendMessage();
+        _client.SendMessage(GameTool.Serialization(data));
     }
 
     public bool IsOnline()
@@ -69,10 +67,12 @@ public class NetManager : SingletonClass<NetManager>
                 break;
             case MsgType.TransformMsg:
                 break;
-            case MsgType.JoinMsg:
-                Debug.Log(value.JoinData.ID);
+            case MsgType.JoinRoomMsg:
                 break;
-            
+            case MsgType.JoinRandomRoomMsg:
+                break;
+            case MsgType.CreateRoomMsg:
+                break;
             default:
                 break;
         }

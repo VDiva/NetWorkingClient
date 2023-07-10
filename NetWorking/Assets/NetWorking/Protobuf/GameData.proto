@@ -4,12 +4,13 @@ package GameData;
 
 
 message Data{
+
     GameTransfrom GameTransfrom=1;
     AnimParameters AnimParameters=2;
     MsgType MsgType=3;
     string msg=4;
     int32 ID=5;
-    JoinData joinData = 6;
+    int32 RoomID=6;
 }
 
 
@@ -50,10 +51,8 @@ message Vector3{
 }
 
 
-message  JoinData {
 
-    int32 ID=1;
-}
+
 
 
 enum MsgType{
@@ -61,7 +60,9 @@ enum MsgType{
     TransformMsg=1;
     StringMsg=2;
     AllocationIDMsg=3;
-    JoinMsg=5;
+    JoinRoomMsg=5;
+    JoinRandomRoomMsg=6;
+    CreateRoomMsg=7;
 }
 
 
