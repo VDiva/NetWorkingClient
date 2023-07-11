@@ -13,13 +13,13 @@ using UnityEngine;
 public class NetManager : SingletonClass<NetManager>
 {
     private int _selfId;
-    private Client<Message> _client;
+    private Client _client;
 
-    private List<Client<Message>> _clients;
+    private List<Client> _clients;
     
-    public static Action<byte[],Client<Message>> OnMessageAction;
-    public static Action<Client<Message>> OnConnectToServerAction;
-    public static Action<Client<Message>> OnDisConnectToServerAction;
+    public static Action<byte[],Client> OnMessageAction;
+    public static Action<Client> OnConnectToServerAction;
+    public static Action<Client> OnDisConnectToServerAction;
 
     
 
