@@ -14,7 +14,7 @@ public class NetManager : SingletonClass<NetManager>
 {
     private int _selfId;
     private Client _client;
-
+    
     private List<Client> _clients;
     
     public static Action<byte[],Client> OnMessageAction;

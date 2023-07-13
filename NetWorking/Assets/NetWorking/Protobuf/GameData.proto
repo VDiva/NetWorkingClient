@@ -10,7 +10,8 @@ message Data{
     MsgType MsgType=3;
     string msg=4;
     int32 ID=5;
-    int32 RoomID=6;
+    PlayerData PlayerData=6;
+    RoomData RoomData=7;
 }
 
 
@@ -50,7 +51,15 @@ message Vector3{
     float Z=3;
 }
 
+message RoomData{
+    int32 RoomID=1;
+    int32 RoomName=2;
+}
 
+message PlayerData{
+    int32 ID=1;
+    string Name=2;
+}
 
 
 
@@ -60,9 +69,25 @@ enum MsgType{
     TransformMsg=1;
     StringMsg=2;
     AllocationIDMsg=3;
+
     JoinRoomMsg=5;
     JoinRandomRoomMsg=6;
     CreateRoomMsg=7;
+
+    JoinRoomMsgError=8;
+    JoinRandomRoomMsgError=9;
+    CreateRoomMsgError=10;
+
+    JoinRoomMsgSucceed=11;
+    JoinRandomRoomMsgSucceed=12;
+    CreateRoomMsgSucceed=13;
+
+    BlackRoom=14;
+    BlackRoomError=15;
+    BlackRoomSucceed=16;
+
+    JoinRoomCallBack=17;
+
 }
 
 

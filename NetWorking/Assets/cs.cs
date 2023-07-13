@@ -15,9 +15,8 @@ public class cs : MonoBehaviour
     void Start()
     {
         NetManager.instance.SenMessage(new Data{MsgType = MsgType.JoinRandomRoomMsg});
-        NetManager.instance.SenMessage(new Data{MsgType = MsgType.TransformMsg});
+        // NetManager.instance.SenMessage(new Data{MsgType = MsgType.TransformMsg});
         Debug.Log("daaaaaa");
-        
     }
 
     // Update is called once per frame
