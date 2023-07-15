@@ -41,27 +41,46 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\NetWorking\Component\SynAnimator.cs" />
+    <Analyzer Include="D:\Github\NetWorkingClient\NetWorking\Assets\NetWorking\DOTween\Editor\DOTweenEditor.dll" />
+    <Analyzer Include="D:\Github\NetWorkingClient\NetWorking\Assets\NetWorking\DOTween\DOTween.dll" />
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\NetWorking\Component\SynRoomAnimator.cs" />
      <Compile Include="Assets\NetWorking\Tool\GameTool.cs" />
+     <Compile Include="Assets\NetWorking\Net\RoomManager.cs" />
      <Compile Include="Assets\NetWorking\Net\Message.cs" />
      <Compile Include="Assets\NetWorking\Tool\SingletonClass.cs" />
-     <Compile Include="Assets\cs.cs" />
+     <Compile Include="Assets\cs\cs.cs" />
      <Compile Include="Assets\NetWorking\Net\NetManager.cs" />
-     <Compile Include="Assets\NetWorking\Component\SynTransfrom.cs" />
-     <Compile Include="Assets\syn.cs" />
+     <Compile Include="Assets\cs\bix.cs" />
+     <Compile Include="Assets\NetWorking\Component\SynRoomTransfrom.cs" />
+     <Compile Include="Assets\cs\syn.cs" />
      <Compile Include="Assets\NetWorking\Protobuf\GameData.cs" />
-     <Compile Include="Assets\NetWorking\Type\MsgType.cs" />
-     <Compile Include="Assets\NetWorking\Net\RoomManager.cs" />
-     <Compile Include="Assets\bix.cs" />
      <Compile Include="Assets\NetWorking\Tool\SingletonMono.cs" />
+     <Compile Include="Assets\NetWorking\Type\MsgType.cs" />
+     <Compile Include="Assets\NetWorking\Msg\Msg.cs" />
+     <Compile Include="Assets\NetWorking\Net\NetWorkingID.cs" />
+     <Compile Include="Assets\NetWorking\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+     <Compile Include="Assets\NetWorking\DOTween\Modules\DOTweenModuleSprite.cs" />
+     <Compile Include="Assets\NetWorking\DOTween\Modules\DOTweenModuleAudio.cs" />
+     <Compile Include="Assets\NetWorking\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+     <Compile Include="Assets\NetWorking\DOTween\Modules\DOTweenModulePhysics.cs" />
+     <Compile Include="Assets\NetWorking\DOTween\Modules\DOTweenModuleUI.cs" />
+     <Compile Include="Assets\NetWorking\DOTween\Modules\DOTweenModuleUtils.cs" />
+     <Compile Include="Assets\NetWorking\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\NetWorking\Type" />
      <Folder Include="Assets\NetWorking\Tool" />
      <Folder Include="Assets\NetWorking\Component" />
+     <Folder Include="Assets\NetWorking\DOTween\Modules" />
+     <Folder Include="Assets\NetWorking\DOTween" />
      <Folder Include="Assets\NetWorking\Net" />
      <Folder Include="Assets\NetWorking\Dll" />
+     <Folder Include="Assets\NetWorking\Msg" />
      <Folder Include="Assets\NetWorking\Protobuf\net45" />
+     <None Include="Assets\NetWorking\DOTween\readme.txt" />
+     <Folder Include="Assets\cs" />
      <Folder Include="Assets\NetWorking\Protobuf" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\NetWorking" />
@@ -331,6 +350,9 @@
      </Reference>
      <Reference Include="ReportGeneratorMerged">
      <HintPath>D:\Github\NetWorkingClient\NetWorking\Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTween">
+     <HintPath>D:\Github\NetWorkingClient\NetWorking\Assets\NetWorking\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>D:\UnityHub\Unity\2021.3.22f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

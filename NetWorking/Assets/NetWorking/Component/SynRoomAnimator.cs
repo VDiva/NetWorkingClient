@@ -1,11 +1,14 @@
 ﻿using System;
 using GameData;
+using NetWorking.Net;
+using NetWorking.Tool;
 using UnityEngine;
 
 namespace NetWorking.Component
 {
+    [RequireComponent(typeof(NetWorkingID))]
     [RequireComponent(typeof(Animator))]
-    public class SynAnimator : MonoBehaviour
+    public class SynRoomAnimator : MonoBehaviour
     {
         public float howOftenDoYouSyn;
         public bool isFraming;
@@ -19,6 +22,7 @@ namespace NetWorking.Component
 
         private void OnEnable()
         {
+            if (!gameObject.IsLocal()) return;
             if (!isFraming)
             {
                 InvokeRepeating("SendAnimData",0,howOftenDoYouSyn);
@@ -32,18 +36,19 @@ namespace NetWorking.Component
 
         private void Update()
         {
-            if (isFraming&&NetManager.instance.IsOnline())
+            if (!gameObject.IsLocal()) return;
+            if (isFraming&&NetManager.Instance.IsOnline())
             {
-                NetManager.instance.SenMessage(GetMsg());
+                NetManager.Instance.SenMessage(GetMsg());
             }
         }
 
 
         private void SendAnimData()
         {
-            if (NetManager.instance.IsOnline())
+            if (NetManager.Instance.IsOnline())
             {
-                NetManager.instance.SenMessage(GetMsg());
+                NetManager.Instance.SenMessage(GetMsg());
             }
         }
 
@@ -55,7 +60,8 @@ namespace NetWorking.Component
         {
             Data data = new Data
             {
-                MsgType = MsgType.AnimMsg,
+                MsgType = MsgType.RoomMsg,
+                RoomMsgType = RoomMsgType.RoomAnimMsg,
                 AnimParameters = new AnimParameters()
             };
             foreach (var item in _animator.parameters)

@@ -13,7 +13,8 @@ namespace NetWorking.Tool
             {
                 if (instance==null)
                 {
-                    instance = FindObjectOfType<T>();
+                    GameObject obj = new GameObject(typeof(T).Name);
+                    instance=obj.AddComponent<T>();
                 }
 
                 return instance;

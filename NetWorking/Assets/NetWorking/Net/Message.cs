@@ -2,6 +2,7 @@
 using NetWorking.Tool;
 using NetWorkingServer;
 using UnityEngine;
+using NetWorking.Msg;
 
 namespace NetWorking.Net
 {
@@ -16,16 +17,7 @@ namespace NetWorking.Net
         {
             
             Data d = GameTool.DeSerialization<Data>(data);
-            switch (d.MsgType)
-            {
-                case MsgType.JoinRandomRoomMsgSucceed:
-                    
-                    Debug.Log("加入随机房间成功");
-                    break;
-                case MsgType.JoinRoomCallBack:
-                    
-                    break;
-            }
+            NetManager.Instance.AddMessage(new Msg.Msg(d,client));
         }
 
         public void OnConnectToServer(ref Client client)

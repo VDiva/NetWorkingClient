@@ -1,6 +1,9 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 using System.Text;
+using NetWorking.Net;
+using UnityEngine;
+
 namespace NetWorking.Tool
 {
     public static class GameTool
@@ -14,7 +17,12 @@ namespace NetWorking.Tool
         {
             return new GameData.Vector3 { X = self.x, Y = self.y, Z = self.z };
         }
-        
+
+
+        public static bool IsLocal(this GameObject obj)
+        {
+            return NetManager.Instance.IsLocal(obj.GetComponent<NetWorkingID>().ID);
+        }
         
         public static byte[] Packet(ref byte[] cache)
         {

@@ -10,16 +10,16 @@ public class cs : MonoBehaviour
     private void Awake()
     {
         
-        NetManager.instance.ConnectToServer("127.0.0.1",8888);
+        NetManager.Instance.ConnectToServer("127.0.0.1",8888);
         
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        NetManager.instance.SenMessage(new Data{MsgType = MsgType.JoinRandomRoomMsg});
+        NetManager.Instance.SenMessage(new Data{MsgType = MsgType.RoomMsg,RoomMsgType = RoomMsgType.JoinRandomRoomMsg});
         // NetManager.instance.SenMessage(new Data{MsgType = MsgType.TransformMsg});
-        Debug.Log("daaaaaa");
+        
     }
 
     // Update is called once per frame

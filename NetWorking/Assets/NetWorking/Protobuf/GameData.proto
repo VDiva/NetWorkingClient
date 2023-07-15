@@ -10,8 +10,12 @@ message Data{
     MsgType MsgType=3;
     string msg=4;
     int32 ID=5;
+   
     PlayerData PlayerData=6;
     RoomData RoomData=7;
+    RoomMsgType RoomMsgType=8;
+    LobbyMsgType LobbyMsgType=9;
+    repeated PlayerData PlayerDatas=10;
 }
 
 
@@ -54,39 +58,56 @@ message Vector3{
 message RoomData{
     int32 RoomID=1;
     int32 RoomName=2;
+    int32 MaxPeople=3;
 }
 
 message PlayerData{
     int32 ID=1;
     string Name=2;
+    
 }
 
 
+enum LobbyMsgType{
+    LobbyAnimMsg=0;
+    LobbyTransformMsg=1;
+}
 
+
+enum RoomMsgType{
+
+    
+
+    JoinRoomMsg=0;
+    JoinRandomRoomMsg=1;
+    CreateRoomMsg=2;
+
+    JoinRoomMsgError=3;
+    JoinRandomRoomMsgError=4;
+    CreateRoomMsgError=5;
+
+    JoinRoomMsgSucceed=6;
+    JoinRandomRoomMsgSucceed=7;
+    CreateRoomMsgSucceed=8;
+
+    BlackRoom=9;
+    BlackRoomError=10;
+    BlackRoomSucceed=11;
+
+    JoinRoomCallBack=12;
+
+    RoomAnimMsg=13;
+    RoomTransformMsg=14;
+}
 
 enum MsgType{
-    AnimMsg=0;
-    TransformMsg=1;
-    StringMsg=2;
-    AllocationIDMsg=3;
+   
+    StringMsg=0;
+    AllocationIDMsg=1;
+    RoomMsg=2;
+    LobbyMsg=3;
 
-    JoinRoomMsg=5;
-    JoinRandomRoomMsg=6;
-    CreateRoomMsg=7;
-
-    JoinRoomMsgError=8;
-    JoinRandomRoomMsgError=9;
-    CreateRoomMsgError=10;
-
-    JoinRoomMsgSucceed=11;
-    JoinRandomRoomMsgSucceed=12;
-    CreateRoomMsgSucceed=13;
-
-    BlackRoom=14;
-    BlackRoomError=15;
-    BlackRoomSucceed=16;
-
-    JoinRoomCallBack=17;
+    
 
 }
 
