@@ -14,14 +14,16 @@ namespace NetWorking.Net
 
         public void OnMessage(byte[] data, ref Client client)
         {
+            
             Data d = GameTool.DeSerialization<Data>(data);
             switch (d.MsgType)
             {
                 case MsgType.JoinRandomRoomMsgSucceed:
+                    
                     Debug.Log("加入随机房间成功");
                     break;
                 case MsgType.JoinRoomCallBack:
-                    Debug.Log(d.PlayerData.ID);
+                    
                     break;
             }
         }
